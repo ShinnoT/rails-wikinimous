@@ -7,6 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "faker"
 
+puts 'Cleaning old articles'
+Article.destroy_all
+
+
+puts 'Creating articles'
 10.times do
   article = Article.new(
     title: Faker::RickAndMorty.quote,
@@ -14,3 +19,5 @@ require "faker"
     )
   article.save!
 end
+
+puts 'Finish!'

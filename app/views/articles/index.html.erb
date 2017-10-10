@@ -1,0 +1,12 @@
+<%= link_to "create article", new_article_path %>
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <%= link_to article.title, article_path(id: article.id) %>
+      <!-- but on rails, it knows automatically that you are accessing the id
+      so no need to specify that you are trying to access the id
+      so you can do this:
+      <%= link_to article.title, article_path(article) %> -->
+    </li>
+  <% end %>
+</ul>
